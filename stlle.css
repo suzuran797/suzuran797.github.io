@@ -161,7 +161,13 @@ nav a:hover { color: var(--leaf); }
   overflow: hidden;
   z-index: 2;
 }
-.avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-inner img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  padding: 12px 10px 14px;
+  display: block;
+}
 
 /* 旋转光环 */
 .ring {
