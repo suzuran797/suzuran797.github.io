@@ -202,6 +202,12 @@ section h2 {
 }
 section p { color: var(--muted); max-width: 760px; }
 .note { font-size: .85rem; color: var(--muted); margin-top: 12px; }
+.note a {
+  color: var(--leaf);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(78,154,90,.5);
+}
+.note a:hover { color: var(--pollen); border-color: var(--pollen); }
 
 /* 卡片 */
 .profile-grid {
