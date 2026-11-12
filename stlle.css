@@ -388,56 +388,29 @@ footer .ai-credit {
   section { padding: 0 16px; }
 }
 
-/* 第二位歌姬大区块 */
-.singer-hero {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 40px;
-  align-items: center;
-  margin-top: 10px;
+/* 卡片第一格：序号版式（与主视觉立绘区分，避免重复） */
+.singer-pic-text {
+  flex-direction: column;
+  gap: 6px;
+  background: linear-gradient(160deg, #fff, var(--mint-2));
 }
-.singer-kicker {
-  font-size: .78rem;
-  letter-spacing: .22em;
-  color: var(--leaf);
-  margin-bottom: 10px;
-}
-.singer-hero h3 {
-  font-size: 1.9rem;
-  margin: 0 0 14px;
-  color: var(--text);
-  display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px;
-}
-.singer-ver {
-  font-size: .9rem;
-  font-weight: 400;
-  color: var(--muted);
+.singer-no {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
   letter-spacing: .06em;
+  color: var(--leaf);
+  opacity: .55;
 }
-.singer-hero p { color: var(--muted); line-height: 1.9; max-width: 34em; }
-.singer-hero .btn { margin-top: 22px; display: inline-flex; }
-.singer-hero-pic { position: relative; }
-.singer-hero-inner {
+.singer-pic-text small {
+  font-size: .78rem;
+  letter-spacing: .18em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.singer-body .btn.ghost {
   background: #fff;
-  border-radius: 20px;
-  padding: 14px;
-  display: flex; align-items: center; justify-content: center;
-  min-height: 420px;
-  box-shadow: 0 18px 40px rgba(78,154,90,.14);
-  position: relative;
-  z-index: 2;
-}
-.singer-hero-inner img {
-  max-width: 100%;
-  max-height: 410px;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 10px 22px rgba(78,154,90,.18));
-}
-
-@media (max-width: 820px) {
-  .singer-hero { grid-template-columns: 1fr; gap: 26px; }
-  .singer-hero h3 { font-size: 1.5rem; }
-  .singer-hero-inner { min-height: 340px; }
-  .singer-hero-inner img { max-height: 330px; }
+  color: var(--leaf);
+  border: 1px solid var(--leaf);
+  margin-top: 8px;
 }
