@@ -57,12 +57,7 @@
     glow.style.display = "none";
   }
 
-  /* 5. 试听播放器 */
-  var audio = document.getElementById("audio");
-  var playBtn = document.getElementById("playBtn");
-  var bar = document.getElementById("bar");
-  var time = document.getElementById("time");
-
+  /* 5. 试听播放器（支持多个） */
   function fmt(sec) {
     if (!isFinite(sec)) return "0:00";
     var m = Math.floor(sec / 60);
@@ -70,15 +65,29 @@
     return m + ":" + (s < 10 ? "0" + s : s);
   }
 
-  if (audio && playBtn) {
+  var players = document.querySelectorAll(".player");
+
+  players.forEach(function (player) {
+    var audio = player.querySelector("audio");
+    var playBtn = player.querySelector(".play-btn");
+    var bar = player.querySelector(".bar");
+    var time = player.querySelector(".time");
+    if (!audio || !playBtn) return;
+
     playBtn.addEventListener("click", function () {
       if (audio.paused) {
+        // 同一时间只播一个
+        players.forEach(function (other) {
+          var a = other.querySelector("audio");
+          if (a && a !== audio) a.pause();
+        });
         var p = audio.play();
         if (p && p.catch) p.catch(function () { playBtn.textContent = "▶"; });
       } else {
         audio.pause();
       }
     });
+
     audio.addEventListener("play", function () { playBtn.textContent = "⏸"; });
     audio.addEventListener("pause", function () { playBtn.textContent = "▶"; });
     audio.addEventListener("timeupdate", function () {
@@ -94,5 +103,5 @@
       playBtn.textContent = "▶";
       if (bar) bar.style.width = "0%";
     });
-  }
+  });
 })();
