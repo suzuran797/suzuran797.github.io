@@ -376,3 +376,14 @@ footer .ai-credit {
   font-weight: 600;
   vertical-align: 2px;
 }
+
+/* 窄屏导航：7 项一行放下 */
+@media (max-width: 460px) {
+  nav { padding: 14px 12px; flex-wrap: nowrap; gap: 8px; }
+  .logo { font-size: .78rem; letter-spacing: 1px; white-space: nowrap; flex: 0 0 auto; }
+  .logo svg { width: 15px; height: 15px; }
+  nav ul { gap: 7px; flex-wrap: nowrap; }
+  nav a { font-size: .74rem; white-space: nowrap; }
+  .hero { padding: 0 16px; }
+  section { padding: 0 16px; }
+}
