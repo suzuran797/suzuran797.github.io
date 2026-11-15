@@ -414,3 +414,12 @@ footer .ai-credit {
   border: 1px solid var(--leaf);
   margin-top: 8px;
 }
+
+/* 主视觉去掉立绘后：文字居中版 */
+.hero-solo {
+  justify-content: center;
+  text-align: center;
+  min-height: 46vh;
+}
+.hero-solo .hero-text { flex: 1 1 auto; max-width: 720px; }
+.hero-solo .btns { justify-content: center; }
